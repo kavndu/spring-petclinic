@@ -1,0 +1,132 @@
+[opentelemetry.auto.trace 2021-05-11 09:52:17:588 +0530] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 1.1.0
+
+
+              |\      _,,,--,,_
+             /,`.-'`'   ._  \-;;,_
+  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+ |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+ |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+ |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+ |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+ |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+ |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+ ==================================================================/_/_/_/
+
+:: Built with Spring Boot :: 2.4.2
+
+
+2021-05-11 09:52:20.780  INFO 17546 --- [           main] o.s.s.petclinic.PetClinicApplication     : Starting PetClinicApplication v2.4.2 using Java 1.8.0_282 on adl with PID 17546 (/home/sathsara/adl/distributed-tracing/spring-petclinic/target/spring-petclinic-2.4.2.jar started by sathsara in /home/sathsara/adl/distributed-tracing/spring-petclinic)
+2021-05-11 09:52:20.785  INFO 17546 --- [           main] o.s.s.petclinic.PetClinicApplication     : No active profile set, falling back to default profiles: default
+2021-05-11 09:52:22.460  INFO 17546 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-11 09:52:22.538  INFO 17546 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 4 JPA repository interfaces.
+2021-05-11 09:52:23.230  INFO 17546 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-11 09:52:23.265  INFO 17546 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-11 09:52:23.265  INFO 17546 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-05-11 09:52:23.340  INFO 17546 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-11 09:52:23.340  INFO 17546 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2491 ms
+2021-05-11 09:52:24.027  INFO 17546 --- [           main] org.ehcache.core.EhcacheManager          : Cache 'vets' created in EhcacheManager.
+2021-05-11 09:52:24.047  INFO 17546 --- [           main] org.ehcache.jsr107.Eh107CacheManager     : Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=urn.X-ehcache.jsr107-default-config,Cache=vets
+2021-05-11 09:52:24.053  INFO 17546 --- [           main] org.ehcache.jsr107.Eh107CacheManager     : Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=urn.X-ehcache.jsr107-default-config,Cache=vets
+2021-05-11 09:52:24.151  INFO 17546 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-11 09:52:24.403  INFO 17546 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-11 09:52:24.877  INFO 17546 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-11 09:52:25.008  INFO 17546 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-05-11 09:52:25.211  INFO 17546 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-11 09:52:25.498  INFO 17546 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-05-11 09:52:26.698  INFO 17546 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-11 09:52:26.713  INFO 17546 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-11 09:52:27.789  INFO 17546 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-11 09:52:28.847  INFO 17546 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoint(s) beneath base path '/actuator'
+2021-05-11 09:52:28.924  INFO 17546 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-11 09:52:28.943  INFO 17546 --- [           main] o.s.s.petclinic.PetClinicApplication     : Started PetClinicApplication in 8.64 seconds (JVM running for 11.447)
+2021-05-11 09:52:32.606  INFO 17546 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-11 09:52:32.606  INFO 17546 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-11 09:52:32.610  INFO 17546 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+[opentelemetry.auto.trace 2021-05-11 11:59:21:505 +0530] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 1.1.0
+
+
+              |\      _,,,--,,_
+             /,`.-'`'   ._  \-;;,_
+  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+ |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+ |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+ |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+ |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+ |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+ |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+ ==================================================================/_/_/_/
+
+:: Built with Spring Boot :: 2.4.2
+
+
+2021-05-11 11:59:25.505  INFO 24620 --- [           main] o.s.s.petclinic.PetClinicApplication     : Starting PetClinicApplication v2.4.2 using Java 1.8.0_282 on adl with PID 24620 (/home/sathsara/adl/distributed-tracing/spring-petclinic/target/spring-petclinic-2.4.2.jar started by sathsara in /home/sathsara/adl/distributed-tracing/spring-petclinic)
+2021-05-11 11:59:25.523  INFO 24620 --- [           main] o.s.s.petclinic.PetClinicApplication     : No active profile set, falling back to default profiles: default
+2021-05-11 11:59:27.785  INFO 24620 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-11 11:59:27.896  INFO 24620 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 4 JPA repository interfaces.
+2021-05-11 11:59:28.786  INFO 24620 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-11 11:59:28.825  INFO 24620 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-11 11:59:28.825  INFO 24620 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-05-11 11:59:28.909  INFO 24620 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-11 11:59:28.909  INFO 24620 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3249 ms
+2021-05-11 11:59:29.498  INFO 24620 --- [           main] org.ehcache.core.EhcacheManager          : Cache 'vets' created in EhcacheManager.
+2021-05-11 11:59:29.516  INFO 24620 --- [           main] org.ehcache.jsr107.Eh107CacheManager     : Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=urn.X-ehcache.jsr107-default-config,Cache=vets
+2021-05-11 11:59:29.522  INFO 24620 --- [           main] org.ehcache.jsr107.Eh107CacheManager     : Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=urn.X-ehcache.jsr107-default-config,Cache=vets
+2021-05-11 11:59:29.633  INFO 24620 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-11 11:59:29.877  INFO 24620 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-11 11:59:30.155  INFO 24620 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-11 11:59:30.388  INFO 24620 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-05-11 11:59:30.544  INFO 24620 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-11 11:59:30.749  INFO 24620 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-05-11 11:59:31.772  INFO 24620 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-11 11:59:31.785  INFO 24620 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-11 11:59:33.122  INFO 24620 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-11 11:59:34.050  INFO 24620 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoint(s) beneath base path '/actuator'
+2021-05-11 11:59:34.166  INFO 24620 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-11 11:59:34.186  INFO 24620 --- [           main] o.s.s.petclinic.PetClinicApplication     : Started PetClinicApplication in 9.421 seconds (JVM running for 12.775)
+2021-05-11 11:59:38.103  INFO 24620 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-11 11:59:38.104  INFO 24620 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-11 11:59:38.106  INFO 24620 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[opentelemetry.auto.trace 2021-05-11 12:01:30:542 +0530] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 1.1.0
+
+
+              |\      _,,,--,,_
+             /,`.-'`'   ._  \-;;,_
+  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+ |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+ |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+ |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+ |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+ |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+ |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+ ==================================================================/_/_/_/
+
+:: Built with Spring Boot :: 2.4.2
+
+
+2021-05-11 12:01:31.263  INFO 25038 --- [           main] o.s.s.petclinic.PetClinicApplication     : Starting PetClinicApplication v2.4.2 using Java 1.8.0_282 on adl with PID 25038 (/home/sathsara/adl/distributed-tracing/spring-petclinic/target/spring-petclinic-2.4.2.jar started by sathsara in /home/sathsara/adl/distributed-tracing/spring-petclinic)
+2021-05-11 12:01:31.266  INFO 25038 --- [           main] o.s.s.petclinic.PetClinicApplication     : No active profile set, falling back to default profiles: default
+2021-05-11 12:01:32.461  INFO 25038 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-11 12:01:32.518  INFO 25038 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
+2021-05-11 12:01:33.186  INFO 25038 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-11 12:01:33.197  INFO 25038 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-11 12:01:33.197  INFO 25038 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-05-11 12:01:33.251  INFO 25038 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-11 12:01:33.251  INFO 25038 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1928 ms
+2021-05-11 12:01:34.105  INFO 25038 --- [           main] org.ehcache.core.EhcacheManager          : Cache 'vets' created in EhcacheManager.
+2021-05-11 12:01:34.121  INFO 25038 --- [           main] org.ehcache.jsr107.Eh107CacheManager     : Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=urn.X-ehcache.jsr107-default-config,Cache=vets
+2021-05-11 12:01:34.127  INFO 25038 --- [           main] org.ehcache.jsr107.Eh107CacheManager     : Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=urn.X-ehcache.jsr107-default-config,Cache=vets
+2021-05-11 12:01:34.195  INFO 25038 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-11 12:01:34.479  INFO 25038 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-11 12:01:34.796  INFO 25038 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-11 12:01:34.917  INFO 25038 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-05-11 12:01:35.241  INFO 25038 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-11 12:01:35.585  INFO 25038 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-05-11 12:01:37.243  INFO 25038 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-11 12:01:37.251  INFO 25038 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-11 12:01:38.907  INFO 25038 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-11 12:01:42.149  INFO 25038 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoint(s) beneath base path '/actuator'
+2021-05-11 12:01:42.332  INFO 25038 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-11 12:01:42.373  INFO 25038 --- [           main] o.s.s.petclinic.PetClinicApplication     : Started PetClinicApplication in 11.49 seconds (JVM running for 11.926)
+2021-05-11 12:02:27.320  INFO 25038 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-11 12:02:27.320  INFO 25038 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-11 12:02:27.321  INFO 25038 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
